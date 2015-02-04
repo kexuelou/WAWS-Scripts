@@ -34,7 +34,6 @@ $password = "your deploy password"
 
 $sitename = $env:WEBSITE_SITE_NAME
 $jobpath = $env:WEBJOBS_PATH 
-$jobname = $env:WEBJOBS_NAME 
 
  #$env:WEBSITE_SITE_NAME
  #$env:WEBJOBS_NAME 
@@ -61,7 +60,6 @@ ForEach ($wp in $wps)
      }
 }
 
-
 write-output "worker process"
 write-output $proc
 
@@ -73,14 +71,13 @@ ForEach ($cproc in $proc.children)
     $nproc = ConvertFrom-Json $result
     if ($nproc.name.CompareTo("node") -eq 0)
     {
-        break
+        write-output "node process"
+        write-output $nproc
+
+        $cmd =  "${jobpath}\NodeCrashDump\procdump.exe -accepteula -e -t " + $nproc.id
+        write-output $cmd
+
+        iex $cmd
      }
 }
 
-write-output "node process"
-write-output $nproc
-
-$cmd =  "${jobpath}\NodeCrashDump\procdump.exe -accepteula -e -t " + $nproc.id
-write-output $cmd
-
-iex $cmd
