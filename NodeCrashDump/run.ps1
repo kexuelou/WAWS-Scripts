@@ -74,7 +74,7 @@ ForEach ($cproc in $proc.children)
         write-output "node process"
         write-output $nproc
 
-        $cmd =  "${jobpath}\NodeCrashDump\procdump.exe -accepteula -e -t " + $nproc.id
+        $cmd =  "${jobpath}\NodeCrashDump\procdump.exe -accepteula -e -t " + $nproc.id + " D:\home\site\diagnostics"
         write-output $cmd
 
         iex $cmd
