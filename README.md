@@ -15,3 +15,10 @@ When using this, it's better:
 1. Enable Always-On feature
 2. Set the WEBJOBS_IDLE_TIMEOUT to a value which is longer enough
 
+##MonitorProcesses 
+Powershell script can be run as Continuous webjob. It uses Kudu Rest API to get the processes info like name, ID, and resoruces usage into CSV file.
+
+Whenever there is a problem, we can analyze this CSV output for:
+1. resource usage
+2. Process restart
+
