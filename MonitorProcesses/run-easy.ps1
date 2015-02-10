@@ -9,5 +9,5 @@ Get-Process | Format-Table -Property  TotalProcessorTime, UserProcessorTime, CPU
 
  while (1 -eq 1){
   Get-Process | Format-Table -HideTableHeaders  -Property ProcessName, Id, StartTime, TotalProcessorTime, UserProcessorTime, CPU, HandleCount, PrivateMemorySize, NonpagedSystemMemorySize, PagedMemorySize, PeakPagedMemorySize, VirtualMemorySize,PeakVirtualMemorySize, WorkingSet, PeakWorkingSet  | Out-File -Append $logFile
-  sleep -Seconds 1
+  sleep -Seconds 30
 }
