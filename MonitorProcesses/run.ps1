@@ -53,14 +53,21 @@ Add-Content $logFile $content
 
  while (1 -eq 1){
   $apiUrl = "https://${sitename}.scm.azurewebsites.net/api/processes"
+  Write-Output $apiUrl
+
   $result = Invoke-RestAPI $username $password $apiUrl
   $procs = ConvertFrom-Json $result
 
  
  ForEach ($proc in $procs)
  {
-    $wpid = $proc.id
+    $wpid = $proc.Id
+    Write-Output $proc.Name
+    Write-Output $proc.Id
+
     $apiUrl = "https://${sitename}.scm.azurewebsites.net/api/processes/${wpid}"
+    Write-Output $apiUrl
+
     $result = Invoke-RestAPI $username $password $apiUrl
     DumpProcInfo $result
  }
