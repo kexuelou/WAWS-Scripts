@@ -9,6 +9,7 @@ Add-Content $logFile $content
 #"Time`t`t`t`t`tName`t`t`tID`t`tstart_time`t`t`t`t`t`tthread_count`thandle_count`t`ttotal_cpu_time`t`tuser_cpu_time`t`tworking_set`t`tpeak_working_set`t`tprivate_memory`t`tvirtual_memory`t`tpeak_virtual_memory`t`tpaged_memory`t`tpeak_paged_memory`t`tpaged_system_memory`t`tnon_paged_system_memory"
 
  while (1 -eq 1){
+<<<<<<< HEAD
    #Get-Process | Format-Table -HideTableHeaders  -Property ProcessName, Id, StartTime, TotalProcessorTime, UserProcessorTime, CPU, HandleCount, PrivateMemorySize, NonpagedSystemMemorySize, PagedMemorySize, PeakPagedMemorySize, VirtualMemorySize,PeakVirtualMemorySize, WorkingSet, PeakWorkingSet  | Out-File -Append $logFile
    $procs = Get-Process
    $time = Get-Date -Format "yyyy-MM-dd hh:mm:ss"
@@ -19,4 +20,8 @@ Add-Content $logFile $content
       Add-Content $logFile $content
    }
    sleep -Seconds 30
+=======
+  Get-Process | Format-Table -HideTableHeaders  -Property ProcessName, Id, StartTime, TotalProcessorTime, UserProcessorTime, CPU, HandleCount, PrivateMemorySize, NonpagedSystemMemorySize, PagedMemorySize, PeakPagedMemorySize, VirtualMemorySize,PeakVirtualMemorySize, WorkingSet, PeakWorkingSet  | Out-File -Append $logFile
+  sleep -Seconds 30
+>>>>>>> origin/master
 }
