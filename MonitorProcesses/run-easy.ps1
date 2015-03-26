@@ -1,5 +1,5 @@
 ﻿$sitename = $env:WEBSITE_SITE_NAME
-$time = Get-date -Format "yyyymmdd-hhmmss"
+$time = Get-date -Format "yyyyMMdd-HHmmss"
 $logFile = $env:HOME + "\LogFiles\" + $env:COMPUTERNAME + "-" + $sitename + "-" +  $time + ".log"
 
 $content= "Time" + "`t" + "Start_Time" + "`t" + "ProcessName" + "`t" + "Id" + " " + "TotalProcessorTime" + "`t" + "UserProcessorTime"  + "`t" + "CPU"  + "`t" + "HandleCount"  + "`t" + "PrivateMemorySize"   + "`t" + "NonpagedSystemMemorySize"   + "`t" + "PagedMemorySize" + "`t" + "PeakPagedMemorySize" + "`t" + "VirtualMemorySize" + "`t" + "PeakVirtualMemorySize" + "`t" + "WorkingSet" + "`t" + "PeakWorkingSet"
