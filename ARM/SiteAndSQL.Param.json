@@ -1,0 +1,30 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "siteName": {
+            "value": "wzhaoSiteAndSQL"
+        },
+        "hostingPlanName": {
+            "value": "wzhaoSiteAndSQL"
+        },
+        "siteLocation": {
+            "value": "East US"
+        },
+        "serverName": {
+            "value": "wzhaoSiteAndSQL"
+        },
+        "serverLocation": {
+            "value": "East US"
+        },
+        "administratorLogin": {
+            "value": "wzhaoSiteAndSQL"
+        },
+		"repoUrl": {
+			"type": "https://github.com/Rick-Anderson/MvcMovie5"
+		},
+		"branch": {
+			"type": "Master"
+		}
+    }
+}

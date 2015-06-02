@@ -1,0 +1,44 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+ 
+        "newStorageAccountName": {
+            "type": "string",
+            "metadata": {
+                "description": "Unique DNS Name for the Storage Account."
+            }
+        },
+        "location": {
+            "type": "string",
+            "defaultValue": "West US",
+            "allowedValues": [
+                "West US",
+                "East US",
+                "West Europe",
+                "East Asia",
+                "Southeast Asia"
+            ],
+            "metadata": {
+                "description": "Location of resources"
+            }
+ 
+        }
+    },
+    "variables": {
+        "storageAccountType": "Standard_LRS"
+    },
+    "resources": [{
+        "type": "Microsoft.Storage/storageAccounts",
+        "name": "[parameters('newStorageAccountName')]",
+        "location": "[parameters('location')]",
+        "apiVersion": "2015-05-01-preview",
+        "tags": {
+            "dept": "test"
+        },
+        "properties": {
+            "accountType": "[variables('storageAccountType')]"
+        }
+    }]
+}
+

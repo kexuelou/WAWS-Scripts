@@ -1,0 +1,9 @@
+{
+    "newStorageAccountName": {
+        "value": "wzhaoarmstrongstorage"
+    },
+ 
+    "location": {
+        "value": "West US"
+    }
+}
