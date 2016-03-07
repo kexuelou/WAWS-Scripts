@@ -207,9 +207,9 @@ function GetWebApps()
     Write-Verbose "server farms"
     $srvFarms.GetEnumerator() | % {
             $farm = $_
-            Write-Verbose  "ResourceName     ： $($farm.value.ResourceName) "
-            Write-Verbose  "ResourceType     ： $($farm.value.ResourceType)"
-            Write-Verbose  "ResourceGroupName： $($farm.value.ResourceGroupName)"
+            Write-Verbose  "ResourceName      : $($farm.value.ResourceName) "
+            Write-Verbose  "ResourceType      : $($farm.value.ResourceType)"
+            Write-Verbose  "ResourceGroupName : $($farm.value.ResourceGroupName)"
 
             Write-Verbose ""
     }
@@ -219,9 +219,9 @@ function GetWebApps()
     Write-Verbose "Sites"
     $webSites.GetEnumerator() | % {
             $site = $_
-            Write-Verbose  "ResourceName     ： $($site.value.ResourceName) "
-            Write-Verbose  "ResourceType     ： $($site.value.ResourceType)"
-            Write-Verbose  "ResourceGroupName： $($site.value.ResourceGroupName)"
+            Write-Verbose  "ResourceName      : $($site.value.ResourceName) "
+            Write-Verbose  "ResourceType      : $($site.value.ResourceType)"
+            Write-Verbose  "ResourceGroupName : $($site.value.ResourceGroupName)"
 
             Write-Verbose ""
     }
@@ -229,9 +229,9 @@ function GetWebApps()
     Write-Verbose "Slots"
     $slots.GetEnumerator() | % {
             $slot = $_
-            Write-Verbose  "ResourceName     ： $($slot.value.ResourceName) "
-            Write-Verbose  "ResourceType     ： $($slot.value.ResourceType)"
-            Write-Verbose  "ResourceGroupName： $($slot.value.ResourceGroupName)"
+            Write-Verbose  "ResourceName      : $($slot.value.ResourceName) "
+            Write-Verbose  "ResourceType      : $($slot.value.ResourceType)"
+            Write-Verbose  "ResourceGroupName : $($slot.value.ResourceGroupName)"
 
             Write-Verbose ""
     }
@@ -260,12 +260,12 @@ function AnalyzeWebAppsForMigration()
             
             $farmName = GetFarmNameFromID($site.Properties.ServerFarmId)
 
-            Write-Verbose  "ResourceName         ： $($site.ResourceName) "
-            Write-Verbose  "ServerFarmName       ： $($farmName)"
-            Write-Verbose  "ResourceGroupName    ： $($site.ResourceGroupName)"
+            Write-Verbose  "ResourceName         : $($site.ResourceName) "
+            Write-Verbose  "ServerFarmName       : $($farmName)"
+            Write-Verbose  "ResourceGroupName    : $($site.ResourceGroupName)"
 
             $farm = $srvFarms[$farmName]
-            Write-Verbose  "ServerFarmRG         ： $($farm.ResourceGroupName)"
+            Write-Verbose  "ServerFarmRG         : $($farm.ResourceGroupName)"
 
             Write-Verbose ""
 
@@ -294,10 +294,12 @@ function AnalyzeWebAppsForMigration()
             
             $farmName = GetFarmNameFromID($slot.Properties.ServerFarmId)
 
-            Write-Verbose  "ResourceName     ： $($slot.ResourceName) "
-            Write-Verbose  "ServerFarm       ： $($farmName)"
-            Write-Verbose  "ResourceGroupName： $($slot.ResourceGroupName)"
-            Write-Verbose  "ServerFarmRG         ： $($farm.ResourceGroupName)"
+            Write-Verbose  "ResourceName      : $($slot.ResourceName) "
+            Write-Verbose  "ServerFarm        : $($farmName)"
+            Write-Verbose  "ResourceGroupName : $($slot.ResourceGroupName)"
+            
+            $farm = $srvFarms[$farmName]
+            Write-Verbose  "ServerFarmRG         : $($farm.ResourceGroupName)"
 
             Write-Verbose ""
 
