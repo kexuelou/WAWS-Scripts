@@ -6,8 +6,8 @@
     Before subscription migration, we need to make sure the webapps and hosting plan are in the same resource group.
     In other words: 
     	• The site “foo” is in resource group “Rg1”
-	    • The site is hosted in Server Farm “bar”
-	    • Server Farm “bar” is in resource group “Rg2”
+	    • The site is hosted in App Service Plan “bar”
+	    • App Service Plan “bar” is in resource group “Rg2”
 
         Currently we don’t support migrating subscriptions in this state.  
 
@@ -401,7 +401,7 @@ function PrintFindings($ProblemsFound)
         Write-Host $($r.siteName) -ForegroundColor Yellow -nonewline
         Write-Host ") belongs to resource group " -nonewline
         Write-Host $r.siteRG -ForegroundColor Yellow -nonewline
-        Write-Host ", but it's related hosting plan(" -nonewline
+        Write-Host ", but it's related App Service Plan(" -nonewline
         Write-Host $($r.farmName)  -ForegroundColor Yellow -nonewline
         Write-Host ") belongs to resource group (" -nonewline
         Write-Host $r.farmRG  -ForegroundColor Yellow -nonewline
