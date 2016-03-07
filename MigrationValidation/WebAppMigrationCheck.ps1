@@ -127,7 +127,15 @@ function SelectSourceSubscription($subId)
     
     if (ValidSubID($subId))
     {
-        Select-AzureRmSubscription -SubscriptionId $subId
+        $err = $null
+        Select-AzureRmSubscription -SubscriptionId $subId -ErrorVariable err
+        
+        #Problem select subscription
+        if ($err -ne $null)
+        {
+            Exit
+        }
+
         return
     }
 
