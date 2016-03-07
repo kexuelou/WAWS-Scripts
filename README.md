@@ -25,10 +25,10 @@ Whenever there is a problem, we can analyze this CSV output for:
 ##WebApp Migration Validation
 Currently we don’t support migrating subscriptions in this state.    
 • The site “foo” is in resource group "Rg1"  
-• The site is hosted in Server Farm "bar"  
-• Server Farm “bar” is in resource group "Rg2"  
+• The site is hosted in App Service Plan "bar"  
+• App Service Plan “bar” is in resource group "Rg2"  
 
-In order for the customer to migrate their subscription they’ll need to move their site to the same resource group as the server farm the site is hosted in.  
+In order for the customer to migrate their subscription they’ll need to move their site to the same resource group as the App Service Plan the site is hosted in.  
 https://azure.microsoft.com/en-us/documentation/articles/resource-group-move-resources  
 
 This is hard when you have lots of WebApps. Prior to migration, you can run this script. This script checks the state mentioned above, and help you move the site(s) if required.
